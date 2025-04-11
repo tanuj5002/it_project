@@ -1,0 +1,1025 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KampusKart</title>
+    <script src="home.js"></script>
+    <link rel="stylesheet" href="home.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#4F46E5",
+              secondary: "#10B981",
+            },
+            borderRadius: {
+              none: "0px",
+              sm: "4px",
+              DEFAULT: "8px",
+              md: "12px",
+              lg: "16px",
+              xl: "20px",
+              "2xl": "24px",
+              "3xl": "32px",
+              full: "9999px",
+              button: "8px",
+            },
+          },
+        },
+      };
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="bg-gray-50 min-h-screen">
+    <header class="glass-effect fixed w-full z-50 border-b border-gray-100/50">
+      <div class="container mx-auto px-4">
+        <div class="flex items-center justify-between h-16">
+          <div class="flex items-center">
+            <a href="#" class="flex items-center">
+              <span class="font-['Pacifico'] text-2xl gradient-text floating"
+                >KampusKart</span
+              >
+            </a>
+          </div>
+          <div class="flex-1 max-w-2xl mx-8">
+            <div class="relative group">
+              <div
+                class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none"
+              >
+                <i
+                  class="ri-search-line text-gray-400 group-hover:text-primary text-lg transition-colors duration-200"
+                ></i>
+              </div>
+              <input
+                type="text"
+                placeholder="Search for anything..."
+                class="w-full pl-10 pr-12 py-3 text-sm border-2 border-gray-100 rounded-xl focus:outline-none focus:border-primary/30 focus:ring-4 focus:ring-primary/10 bg-white/80 backdrop-blur-sm shadow-sm transition-all duration-200 hover:border-gray-200"
+              />
+              <button
+                class="absolute inset-y-1 right-1 px-3 bg-primary/10 text-primary hover:bg-primary/20 rounded-lg flex items-center justify-center transition-colors duration-200"
+              >
+                <span class="text-sm font-medium">Search</span>
+              </button>
+            </div>
+          </div>
+          <div class="flex items-center space-x-6">
+            <div class="relative cursor-pointer">
+              <i
+                class="ri-shopping-cart-line w-6 h-6 flex items-center justify-center text-gray-600 hover:text-primary"
+              ></i>
+              <span
+                class="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full w-4 h-4 flex items-center justify-center"
+                >3</span
+              >
+            </div>
+            <div class="relative dropdown">
+              <button
+                class="flex items-center space-x-2 text-gray-600 hover:text-primary"
+              >
+                <i
+                  class="ri-user-line w-6 h-6 flex items-center justify-center"
+                ></i>
+              </button>
+              <div
+                class="dropdown-content absolute right-0 mt-2 w-48 bg-white/90 backdrop-blur-md rounded-lg shadow-lg py-2"
+              >
+                <a
+                  href="#"
+                  class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                  >My Profile</a
+                >
+                <a
+                  href="#"
+                  class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                  >My Orders</a
+                >
+                <a
+                  href="#"
+                  class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                  >Wishlist</a
+                >
+                <a
+                  href="#"
+                  class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                  >Settings</a
+                >
+                <div class="border-t border-gray-100 my-1"></div>
+                <a
+                  href="#"
+                  class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                  >Logout</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main class="pt-16">
+      <section
+        class="bg-gradient-to-br from-primary/5 via-white to-secondary/5 py-12"
+      >
+        <div class="container mx-auto px-4">
+          <h2 class="text-3xl font-bold text-center mb-8">Browse Categories</h2>
+          <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+            <div
+              class="category-card glass-effect p-6 rounded-lg shadow-sm hover:shadow-md transition-all cursor-pointer hover-scale"
+            >
+              <div
+                class="category-icon w-12 h-12 mx-auto mb-4 flex items-center justify-center text-primary transition-transform"
+              >
+                <i class="ri-computer-line ri-2x"></i>
+              </div>
+              <h3 class="text-center font-medium">Electronics</h3>
+              <p class="text-sm text-gray-500 text-center mt-2">1,234 items</p>
+            </div>
+            <div
+              class="category-card glass-effect p-6 rounded-lg shadow-sm hover:shadow-md transition-all cursor-pointer hover-scale"
+            >
+              <div
+                class="category-icon w-12 h-12 mx-auto mb-4 flex items-center justify-center text-primary transition-transform"
+              >
+                <i class="ri-pencil-ruler-line ri-2x"></i>
+              </div>
+              <h3 class="text-center font-medium">Stationery</h3>
+              <p class="text-sm text-gray-500 text-center mt-2">2,345 items</p>
+            </div>
+            <div
+              class="category-card glass-effect p-6 rounded-lg shadow-sm hover:shadow-md transition-all cursor-pointer hover-scale"
+            >
+              <div
+                class="category-icon w-12 h-12 mx-auto mb-4 flex items-center justify-center text-primary transition-transform"
+              >
+                <i class="ri-book-line ri-2x"></i>
+              </div>
+              <h3 class="text-center font-medium">Books</h3>
+              <p class="text-sm text-gray-500 text-center mt-2">3,456 items</p>
+            </div>
+            <div
+              class="category-card glass-effect p-6 rounded-lg shadow-sm hover:shadow-md transition-all cursor-pointer hover-scale"
+            >
+              <div
+                class="category-icon w-12 h-12 mx-auto mb-4 flex items-center justify-center text-primary transition-transform"
+              >
+                <i class="ri-basketball-line ri-2x"></i>
+              </div>
+              <h3 class="text-center font-medium">Sports</h3>
+              <p class="text-sm text-gray-500 text-center mt-2">1,567 items</p>
+            </div>
+            <div
+              class="category-card glass-effect p-6 rounded-lg shadow-sm hover:shadow-md transition-all cursor-pointer hover-scale"
+            >
+              <div
+                class="category-icon w-12 h-12 mx-auto mb-4 flex items-center justify-center text-primary transition-transform"
+              >
+                <i class="ri-trophy-line ri-2x"></i>
+              </div>
+              <h3 class="text-center font-medium">Limited Edition</h3>
+              <p class="text-sm text-gray-500 text-center mt-2">234 items</p>
+            </div>
+            <div
+              class="category-card glass-effect p-6 rounded-lg shadow-sm hover:shadow-md transition-all cursor-pointer hover-scale"
+            >
+              <div
+                class="category-icon w-12 h-12 mx-auto mb-4 flex items-center justify-center text-primary transition-transform"
+              >
+                <i class="ri-bike-line ri-2x"></i>
+              </div>
+              <h3 class="text-center font-medium">Cycles</h3>
+              <p class="text-sm text-gray-500 text-center mt-2">789 items</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="py-12 bg-white">
+        <div class="container mx-auto px-4">
+          <div class="flex justify-between items-center mb-8">
+            <h2 class="text-2xl font-bold">Featured Listings</h2>
+            <div class="flex items-center space-x-4">
+              <div class="relative">
+                <select
+                  class="appearance-none bg-white border border-gray-200 rounded-button px-4 py-2 pr-8 text-gray-600 hover:border-primary focus:outline-none focus:border-primary cursor-pointer"
+                >
+                  <option value="newest">Newest First</option>
+                  <option value="price_asc">Price: Low to High</option>
+                  <option value="price_desc">Price: High to Low</option>
+                  <option value="popular">Most Popular</option>
+                </select>
+                <div
+                  class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-600"
+                >
+                  <i class="ri-arrow-down-s-line"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div
+              class="product-card bg-white rounded-lg shadow-sm hover:shadow-md transition-all hover-scale shine-effect"
+            >
+              <img
+                src="https://public.readdy.ai/ai/img_res/d825bec1c65aa355d260652854d7f733.jpg"
+                alt="Product"
+                class="w-full h-48 object-cover rounded-t-lg"
+              />
+              <div class="p-4">
+                <div class="flex items-center justify-between mb-2">
+                  <span class="text-sm text-gray-500">Electronics</span>
+                  <button class="text-gray-400 hover:text-red-500">
+                    <i class="ri-heart-line"></i>
+                  </button>
+                </div>
+                <h3 class="font-medium mb-2">MacBook Pro 2024</h3>
+                <div class="flex items-center justify-between">
+                  <span class="text-primary font-bold">₹74,999</span>
+                  <span class="text-sm text-gray-500">2 days ago</span>
+                </div>
+              </div>
+            </div>
+            <div
+              class="product-card bg-white rounded-lg shadow-sm hover:shadow-md transition-all hover-scale shine-effect"
+            >
+              <img
+                src="https://public.readdy.ai/ai/img_res/d382ddc0ceb341e9e67852d19285aed3.jpg"
+                alt="Product"
+                class="w-full h-48 object-cover rounded-t-lg"
+              />
+              <div class="p-4">
+                <div class="flex items-center justify-between mb-2">
+                  <span class="text-sm text-gray-500">Books</span>
+                  <button class="text-gray-400 hover:text-red-500">
+                    <i class="ri-heart-line"></i>
+                  </button>
+                </div>
+                <h3 class="font-medium mb-2">Engineering Textbooks Set</h3>
+                <div class="flex items-center justify-between">
+                  <span class="text-primary font-bold">₹9,999</span>
+                  <span class="text-sm text-gray-500">1 week ago</span>
+                </div>
+              </div>
+            </div>
+            <div
+              class="product-card bg-white rounded-lg shadow-sm hover:shadow-md transition-all hover-scale shine-effect"
+            >
+              <img
+                src="https://public.readdy.ai/ai/img_res/8abe85184e2594b26a5d4e9d254e8c6e.jpg"
+                alt="Product"
+                class="w-full h-48 object-cover rounded-t-lg"
+              />
+              <div class="p-4">
+                <div class="flex items-center justify-between mb-2">
+                  <span class="text-sm text-gray-500">Sports</span>
+                  <button class="text-gray-400 hover:text-red-500">
+                    <i class="ri-heart-line"></i>
+                  </button>
+                </div>
+                <h3 class="font-medium mb-2">Basketball Kit</h3>
+                <div class="flex items-center justify-between">
+                  <span class="text-primary font-bold">₹3,499</span>
+                  <span class="text-sm text-gray-500">3 days ago</span>
+                </div>
+              </div>
+            </div>
+            <div
+              class="product-card bg-white rounded-lg shadow-sm hover:shadow-md transition-all hover-scale shine-effect"
+            >
+              <img
+                src="https://public.readdy.ai/ai/img_res/d8780952361ff6cd39e953038422e3bd.jpg"
+                alt="Product"
+                class="w-full h-48 object-cover rounded-t-lg"
+              />
+              <div class="p-4">
+                <div class="flex items-center justify-between mb-2">
+                  <span class="text-sm text-gray-500">Cycles</span>
+                  <button class="text-gray-400 hover:text-red-500">
+                    <i class="ri-heart-line"></i>
+                  </button>
+                </div>
+                <h3 class="font-medium mb-2">Mountain Bike</h3>
+                <div class="flex items-center justify-between">
+                  <span class="text-primary font-bold">₹24,999</span>
+                  <span class="text-sm text-gray-500">5 days ago</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section
+        class="py-12 bg-gradient-to-br from-primary/5 via-secondary/5 to-primary/5"
+      >
+        <div class="container mx-auto px-4">
+          <h2 class="text-2xl font-bold mb-8 text-center">Why Choose Us?</h2>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div
+              class="bg-white/80 backdrop-blur-sm p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
+            >
+              <div
+                class="w-12 h-12 flex items-center justify-center text-primary mb-4"
+              >
+                <i class="ri-shield-check-line ri-2x"></i>
+              </div>
+              <h3 class="font-medium mb-2">Verified Students</h3>
+              <p class="text-gray-600">
+                All sellers are verified students ensuring safe and trustworthy
+                transactions.
+              </p>
+            </div>
+            <div
+              class="bg-white/80 backdrop-blur-sm p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
+            >
+              <div
+                class="w-16 h-16 flex items-center justify-center text-primary mb-6 bg-primary/10 rounded-full"
+              >
+                <i class="ri-message-3-line ri-2x"></i>
+              </div>
+              <h3 class="font-medium mb-2">Direct Communication</h3>
+              <p class="text-gray-600">
+                Chat directly with sellers to negotiate prices and arrange
+                meetups.
+              </p>
+            </div>
+            <div
+              class="bg-white/80 backdrop-blur-sm p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
+            >
+              <div
+                class="w-16 h-16 flex items-center justify-center text-primary mb-6 bg-primary/10 rounded-full"
+              >
+                <i class="ri-secure-payment-line ri-2x"></i>
+              </div>
+              <h3 class="font-medium mb-2">Secure Payments</h3>
+              <p class="text-gray-600">
+                Multiple secure payment options available for hassle-free
+                transactions.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="bg-gray-800 text-white py-12">
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div>
+            <h3 class="text-lg font-bold mb-4">Categories</h3>
+            <ul class="space-y-2">
+              <li><a href="#" class="hover:text-primary">Electronics</a></li>
+              <li><a href="#" class="hover:text-primary">Stationery</a></li>
+              <li><a href="#" class="hover:text-primary">Books</a></li>
+              <li>
+                <a href="#" class="hover:text-primary">Sports Equipment</a>
+              </li>
+              <li><a href="#" class="hover:text-primary">Cycles</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-lg font-bold mb-4">About</h3>
+            <ul class="space-y-2">
+              <li><a href="#" class="hover:text-primary">About Us</a></li>
+              <li><a href="#" class="hover:text-primary">Contact</a></li>
+              <li>
+                <a href="#" class="hover:text-primary">Terms & Conditions</a>
+              </li>
+              <li><a href="#" class="hover:text-primary">Privacy Policy</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-lg font-bold mb-4">Support</h3>
+            <ul class="space-y-2">
+              <li><a href="#" class="hover:text-primary">Help Center</a></li>
+              <li><a href="#" class="hover:text-primary">Safety Tips</a></li>
+              <li>
+                <a href="#" class="hover:text-primary">Report an Issue</a>
+              </li>
+              <li><a href="#" class="hover:text-primary">FAQs</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-lg font-bold mb-4">Newsletter</h3>
+            <p class="mb-4">Stay updated with latest offers and deals</p>
+            <div class="flex">
+              <input
+                type="email"
+                placeholder="Your email"
+                class="flex-1 px-4 py-2 rounded-l-button text-gray-900 bg-white/90 backdrop-blur-sm border-none focus:ring-2 focus:ring-primary/20"
+              />
+              <button
+                class="bg-primary px-4 py-2 rounded-r-button hover:bg-primary/90"
+              >
+                Subscribe
+              </button>
+            </div>
+            <div class="flex space-x-4 mt-6">
+              <a href="#" class="hover:text-primary">
+                <i class="ri-facebook-fill ri-lg"></i>
+              </a>
+              <a href="#" class="hover:text-primary">
+                <i class="ri-twitter-fill ri-lg"></i>
+              </a>
+              <a href="#" class="hover:text-primary">
+                <i class="ri-instagram-fill ri-lg"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="border-t border-gray-700 mt-8 pt-8 text-center">
+          <p>&copy; 2025 KampusKart. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <div id="electronics-page" class="hidden">
+      <main class="pt-16">
+        <section class="bg-gradient-to-r from-primary/10 to-secondary/10 py-8">
+          <div class="container mx-auto px-4">
+            <div class="flex items-center justify-between mb-6">
+              <h1 class="text-3xl font-bold">Electronics</h1>
+              <div class="flex space-x-4">
+                <div class="relative">
+                  <select
+                    class="appearance-none bg-white border border-gray-200 rounded-button px-4 py-2 pr-8 text-gray-600 hover:border-primary focus:outline-none focus:border-primary cursor-pointer"
+                  >
+                    <option value="all">All Categories</option>
+                    <option value="laptops">Laptops</option>
+                    <option value="phones">Phones</option>
+                    <option value="tablets">Tablets</option>
+                    <option value="accessories">Accessories</option>
+                  </select>
+                  <div
+                    class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-600"
+                  >
+                    <i class="ri-arrow-down-s-line"></i>
+                  </div>
+                </div>
+                <div class="relative">
+                  <select
+                    class="appearance-none bg-white border border-gray-200 rounded-button px-4 py-2 pr-8 text-gray-600 hover:border-primary focus:outline-none focus:border-primary cursor-pointer"
+                  >
+                    <option value="newest">Newest First</option>
+                    <option value="price_low">Price: Low to High</option>
+                    <option value="price_high">Price: High to Low</option>
+                    <option value="condition">Best Condition</option>
+                  </select>
+                  <div
+                    class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-600"
+                  >
+                    <i class="ri-arrow-down-s-line"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="flex flex-wrap gap-4 mb-8">
+              <button
+                class="px-4 py-2 bg-white rounded-full text-sm font-medium text-gray-600 hover:bg-primary hover:text-white transition-colors"
+              >
+                All Items
+              </button>
+              <button
+                class="px-4 py-2 bg-white rounded-full text-sm font-medium text-gray-600 hover:bg-primary hover:text-white transition-colors"
+              >
+                Under ₹15,000
+              </button>
+              <button
+                class="px-4 py-2 bg-white rounded-full text-sm font-medium text-gray-600 hover:bg-primary hover:text-white transition-colors"
+              >
+                ₹15,000 - ₹30,000
+              </button>
+              <button
+                class="px-4 py-2 bg-white rounded-full text-sm font-medium text-gray-600 hover:bg-primary hover:text-white transition-colors"
+              >
+                Above ₹30,000
+              </button>
+              <button
+                class="px-4 py-2 bg-white rounded-full text-sm font-medium text-gray-600 hover:bg-primary hover:text-white transition-colors"
+              >
+                Like New
+              </button>
+            </div>
+          </div>
+        </section>
+        <section class="py-8 bg-white">
+          <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              <div
+                class="product-card bg-white rounded-lg shadow-sm hover:shadow-md transition-all cursor-pointer"
+                onclick="showProductDetail()"
+              >
+                <img
+                  src="https://public.readdy.ai/ai/img_res/5dd7c1a18d1456b84002a08bcb10bade.jpg"
+                  alt="MacBook Pro"
+                  class="w-full h-48 object-cover rounded-t-lg"
+                />
+                <div class="p-4">
+                  <div class="flex items-center justify-between mb-2">
+                    <span class="text-sm text-gray-500">Laptops</span>
+                    <button
+                      class="text-gray-400 hover:text-red-500"
+                      onclick="event.stopPropagation()"
+                    >
+                      <i class="ri-heart-line"></i>
+                    </button>
+                  </div>
+                  <h3 class="font-medium mb-2">MacBook Pro M3 Pro</h3>
+                  <p class="text-sm text-gray-600 mb-2">
+                    14-inch, 18GB RAM, 512GB SSD
+                  </p>
+                  <div class="flex items-center mb-2">
+                    <span class="text-sm text-gray-500 mr-2">Condition:</span>
+                    <span class="text-sm font-medium text-green-600"
+                      >Like New</span
+                    >
+                  </div>
+                  <div class="flex items-center justify-between">
+                    <span class="text-primary font-bold">₹145,999</span>
+                    <span class="text-sm text-gray-500">1 day ago</span>
+                  </div>
+                </div>
+              </div>
+              <div
+                id="productDetailModal"
+                class="modal fixed inset-0 bg-black bg-opacity-50 z-50 hidden items-center justify-center"
+              >
+                <div
+                  class="bg-white w-full max-w-4xl rounded-lg overflow-hidden relative"
+                >
+                  <button
+                    onclick="closeProductDetail()"
+                    class="absolute top-4 right-4 text-gray-500 hover:text-gray-700"
+                  >
+                    <i class="ri-close-line ri-2x"></i>
+                  </button>
+                  <div class="grid grid-cols-2 gap-8 p-8">
+                    <div class="space-y-4">
+                      <div class="relative h-96 rounded-lg overflow-hidden">
+                        <img
+                          src="https://public.readdy.ai/ai/img_res/7f16e7deb6c88369d3ed46d725e5d4f4.jpg"
+                          alt="MacBook Pro"
+                          class="w-full h-full object-cover"
+                        />
+                      </div>
+                      <div class="grid grid-cols-4 gap-2">
+                        <div
+                          class="h-20 rounded-lg overflow-hidden cursor-pointer hover:ring-2 ring-primary"
+                        >
+                          <img
+                            src="https://readdy.ai/api/search-image?query=macbook pro keyboard closeup with backlight on clean minimal desk, detailed texture, professional lighting, high resolution, 8k&width=200&height=150&seq=14&orientation=landscape"
+                            alt=""
+                            class="w-full h-full object-cover"
+                          />
+                        </div>
+                        <div
+                          class="h-20 rounded-lg overflow-hidden cursor-pointer hover:ring-2 ring-primary"
+                        >
+                          <img
+                            src="https://readdy.ai/api/search-image?query=macbook pro side view showing ports on clean minimal desk, detailed texture, professional lighting, high resolution, 8k&width=200&height=150&seq=15&orientation=landscape"
+                            alt=""
+                            class="w-full h-full object-cover"
+                          />
+                        </div>
+                        <div
+                          class="h-20 rounded-lg overflow-hidden cursor-pointer hover:ring-2 ring-primary"
+                        >
+                          <img
+                            src="https://readdy.ai/api/search-image?query=macbook pro screen display quality closeup on clean minimal desk, detailed texture, professional lighting, high resolution, 8k&width=200&height=150&seq=16&orientation=landscape"
+                            alt=""
+                            class="w-full h-full object-cover"
+                          />
+                        </div>
+                        <div
+                          class="h-20 rounded-lg overflow-hidden cursor-pointer hover:ring-2 ring-primary"
+                        >
+                          <img
+                            src="https://readdy.ai/api/search-image?query=macbook pro touchpad closeup on clean minimal desk, detailed texture, professional lighting, high resolution, 8k&width=200&height=150&seq=17&orientation=landscape"
+                            alt=""
+                            class="w-full h-full object-cover"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                    <div class="space-y-6">
+                      <div>
+                        <h2 class="text-2xl font-bold mb-2">
+                          MacBook Pro M3 Pro (2024)
+                        </h2>
+                        <div
+                          class="flex items-center space-x-2 text-sm text-gray-500"
+                        >
+                          <span>Posted 1 day ago</span>
+                          <span>•</span>
+                          <span>IITPATNA, BIHAR</span>
+                        </div>
+                      </div>
+                      <div class="space-y-4">
+                        <div class="flex items-center justify-between">
+                          <span class="text-3xl font-bold text-primary"
+                            >₹145,999</span
+                          >
+                          <button class="text-gray-400 hover:text-red-500">
+                            <i class="ri-heart-line ri-2x"></i>
+                          </button>
+                        </div>
+                        <div class="space-y-2">
+                          <div class="flex items-center text-sm">
+                            <span class="w-24 text-gray-500">Condition</span>
+                            <span class="font-medium text-green-600"
+                              >Like New</span
+                            >
+                          </div>
+                          <div class="flex items-center text-sm">
+                            <span class="w-24 text-gray-500"
+                              >Purchase Date</span
+                            >
+                            <span>January 2024</span>
+                          </div>
+                          <div class="flex items-center text-sm">
+                            <span class="w-24 text-gray-500">Warranty</span>
+                            <span>11 months remaining</span>
+                          </div>
+                        </div>
+                        <div class="border-t border-gray-100 pt-4">
+                          <h3 class="font-medium mb-2">Specifications</h3>
+                          <ul class="space-y-2 text-sm">
+                            <li>• 14-inch Liquid Retina XDR display</li>
+                            <li>• M3 Pro chip with 12-core CPU, 18-core GPU</li>
+                            <li>• 18GB unified memory</li>
+                            <li>• 512GB SSD storage</li>
+                            <li>• 3 Thunderbolt 4 ports</li>
+                            <li>• HDMI port</li>
+                            <li>• SDXC card slot</li>
+                            <li>• Magic Keyboard with Touch ID</li>
+                          </ul>
+                        </div>
+                        <div class="border-t border-gray-100 pt-4">
+                          <h3 class="font-medium mb-2">Description</h3>
+                          <p class="text-sm text-gray-600">
+                            Selling my 3-month-old MacBook Pro M3 Pro. It's in
+                            pristine condition with zero scratches or dents.
+                            Comes with original box, charger, and documentation.
+                            Reason for selling: Upgrading to M3 Max version for
+                            professional work. Price is slightly negotiable for
+                            serious buyers.
+                          </p>
+                        </div>
+                        <div class="border-t border-gray-100 pt-4 space-y-3">
+                          <button
+                            class="w-full bg-primary text-white py-3 rounded-button hover:bg-primary/90 flex items-center justify-center space-x-2"
+                          >
+                            <i class="ri-message-3-line"></i>
+                            <span>Chat with Seller</span>
+                          </button>
+                          <button
+                            class="w-full border-2 border-primary text-primary py-3 rounded-button hover:bg-primary/5 flex items-center justify-center space-x-2"
+                          >
+                            <i class="ri-phone-line"></i>
+                            <span>View Contact</span>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="product-card bg-white rounded-lg shadow-sm hover:shadow-md transition-all hover-scale shine-effect"
+              >
+                <img
+                  src="https://public.readdy.ai/ai/img_res/43ec9776d02aa0d5d601857e6de722c3.jpg"
+                  alt="iPhone"
+                  class="w-full h-48 object-cover rounded-t-lg"
+                />
+                <div class="p-4">
+                  <div class="flex items-center justify-between mb-2">
+                    <span class="text-sm text-gray-500">Phones</span>
+                    <button class="text-gray-400 hover:text-red-500">
+                      <i class="ri-heart-line"></i>
+                    </button>
+                  </div>
+                  <h3 class="font-medium mb-2">iPhone 15 Pro</h3>
+                  <p class="text-sm text-gray-600 mb-2">
+                    256GB, Natural Titanium
+                  </p>
+                  <div class="flex items-center mb-2">
+                    <span class="text-sm text-gray-500 mr-2">Condition:</span>
+                    <span class="text-sm font-medium text-green-600"
+                      >Excellent</span
+                    >
+                  </div>
+                  <div class="flex items-center justify-between">
+                    <span class="text-primary font-bold">₹89,999</span>
+                    <span class="text-sm text-gray-500">2 days ago</span>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="product-card bg-white rounded-lg shadow-sm hover:shadow-md transition-all hover-scale shine-effect"
+              >
+                <img
+                  src="https://public.readdy.ai/ai/img_res/2226a5d411d7ac32900b2edffc3b64bb.jpg"
+                  alt="iPad"
+                  class="w-full h-48 object-cover rounded-t-lg"
+                />
+                <div class="p-4">
+                  <div class="flex items-center justify-between mb-2">
+                    <span class="text-sm text-gray-500">Tablets</span>
+                    <button class="text-gray-400 hover:text-red-500">
+                      <i class="ri-heart-line"></i>
+                    </button>
+                  </div>
+                  <h3 class="font-medium mb-2">iPad Pro 12.9"</h3>
+                  <p class="text-sm text-gray-600 mb-2">
+                    M2, 256GB + Apple Pencil
+                  </p>
+                  <div class="flex items-center mb-2">
+                    <span class="text-sm text-gray-500 mr-2">Condition:</span>
+                    <span class="text-sm font-medium text-yellow-600"
+                      >Good</span
+                    >
+                  </div>
+                  <div class="flex items-center justify-between">
+                    <span class="text-primary font-bold">₹78,999</span>
+                    <span class="text-sm text-gray-500">3 days ago</span>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="product-card bg-white rounded-lg shadow-sm hover:shadow-md transition-all hover-scale shine-effect"
+              >
+                <img
+                  src="https://public.readdy.ai/ai/img_res/ef18384b6837a4ea49ad9fea38bc9909.jpg"
+                  alt="AirPods"
+                  class="w-full h-48 object-cover rounded-t-lg"
+                />
+                <div class="p-4">
+                  <div class="flex items-center justify-between mb-2">
+                    <span class="text-sm text-gray-500">Accessories</span>
+                    <button class="text-gray-400 hover:text-red-500">
+                      <i class="ri-heart-line"></i>
+                    </button>
+                  </div>
+                  <h3 class="font-medium mb-2">AirPods Pro 2nd Gen</h3>
+                  <p class="text-sm text-gray-600 mb-2">USB-C Charging Case</p>
+                  <div class="flex items-center mb-2">
+                    <span class="text-sm text-gray-500 mr-2">Condition:</span>
+                    <span class="text-sm font-medium text-green-600"
+                      >Like New</span
+                    >
+                  </div>
+                  <div class="flex items-center justify-between">
+                    <span class="text-primary font-bold">₹16,999</span>
+                    <span class="text-sm text-gray-500">4 days ago</span>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="product-card bg-white rounded-lg shadow-sm hover:shadow-md transition-all hover-scale shine-effect"
+              >
+                <img
+                  src="https://public.readdy.ai/ai/img_res/eca79027acc17fab02e119117e6dc248.jpg"
+                  alt="Gaming Laptop"
+                  class="w-full h-48 object-cover rounded-t-lg"
+                />
+                <div class="p-4">
+                  <div class="flex items-center justify-between mb-2">
+                    <span class="text-sm text-gray-500">Laptops</span>
+                    <button class="text-gray-400 hover:text-red-500">
+                      <i class="ri-heart-line"></i>
+                    </button>
+                  </div>
+                  <h3 class="font-medium mb-2">ASUS ROG Strix G15</h3>
+                  <p class="text-sm text-gray-600 mb-2">
+                    RTX 4060, Ryzen 9, 1TB SSD
+                  </p>
+                  <div class="flex items-center mb-2">
+                    <span class="text-sm text-gray-500 mr-2">Condition:</span>
+                    <span class="text-sm font-medium text-yellow-600"
+                      >Good</span
+                    >
+                  </div>
+                  <div class="flex items-center justify-between">
+                    <span class="text-primary font-bold">₹92,999</span>
+                    <span class="text-sm text-gray-500">5 days ago</span>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="product-card bg-white rounded-lg shadow-sm hover:shadow-md transition-all hover-scale shine-effect"
+              >
+                <img
+                  src="https://public.readdy.ai/ai/img_res/c99c1fc67a5f5de03b4a4054f0cc2f04.jpg"
+                  alt="Samsung Phone"
+                  class="w-full h-48 object-cover rounded-t-lg"
+                />
+                <div class="p-4">
+                  <div class="flex items-center justify-between mb-2">
+                    <span class="text-sm text-gray-500">Phones</span>
+                    <button class="text-gray-400 hover:text-red-500">
+                      <i class="ri-heart-line"></i>
+                    </button>
+                  </div>
+                  <h3 class="font-medium mb-2">Samsung S24 Ultra</h3>
+                  <p class="text-sm text-gray-600 mb-2">512GB, Titanium Gray</p>
+                  <div class="flex items-center mb-2">
+                    <span class="text-sm text-gray-500 mr-2">Condition:</span>
+                    <span class="text-sm font-medium text-green-600"
+                      >Like New</span
+                    >
+                  </div>
+                  <div class="flex items-center justify-between">
+                    <span class="text-primary font-bold">₹109,999</span>
+                    <span class="text-sm text-gray-500">1 week ago</span>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="product-card bg-white rounded-lg shadow-sm hover:shadow-md transition-all hover-scale shine-effect"
+              >
+                <img
+                  src="https://public.readdy.ai/ai/img_res/48bb0df678b83ac42431ddaffae20098.jpg"
+                  alt="Gaming Keyboard"
+                  class="w-full h-48 object-cover rounded-t-lg"
+                />
+                <div class="p-4">
+                  <div class="flex items-center justify-between mb-2">
+                    <span class="text-sm text-gray-500">Accessories</span>
+                    <button class="text-gray-400 hover:text-red-500">
+                      <i class="ri-heart-line"></i>
+                    </button>
+                  </div>
+                  <h3 class="font-medium mb-2">Razer Huntsman Elite</h3>
+                  <p class="text-sm text-gray-600 mb-2">
+                    RGB Mechanical Keyboard
+                  </p>
+                  <div class="flex items-center mb-2">
+                    <span class="text-sm text-gray-500 mr-2">Condition:</span>
+                    <span class="text-sm font-medium text-yellow-600"
+                      >Good</span
+                    >
+                  </div>
+                  <div class="flex items-center justify-between">
+                    <span class="text-primary font-bold">₹8,999</span>
+                    <span class="text-sm text-gray-500">1 week ago</span>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="product-card bg-white rounded-lg shadow-sm hover:shadow-md transition-all hover-scale shine-effect"
+              >
+                <img
+                  src="https://public.readdy.ai/ai/img_res/b83f502be6d5263335a318c04c993f41.jpg"
+                  alt="Gaming Mouse"
+                  class="w-full h-48 object-cover rounded-t-lg"
+                />
+                <div class="p-4">
+                  <div class="flex items-center justify-between mb-2">
+                    <span class="text-sm text-gray-500">Accessories</span>
+                    <button class="text-gray-400 hover:text-red-500">
+                      <i class="ri-heart-line"></i>
+                    </button>
+                  </div>
+                  <h3 class="font-medium mb-2">Logitech G Pro X</h3>
+                  <p class="text-sm text-gray-600 mb-2">
+                    Wireless Gaming Mouse
+                  </p>
+                  <div class="flex items-center mb-2">
+                    <span class="text-sm text-gray-500 mr-2">Condition:</span>
+                    <span class="text-sm font-medium text-green-600"
+                      >Like New</span
+                    >
+                  </div>
+                  <div class="flex items-center justify-between">
+                    <span class="text-primary font-bold">₹7,499</span>
+                    <span class="text-sm text-gray-500">2 weeks ago</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="flex justify-center mt-8">
+              <button
+                class="gradient-border px-6 py-2 rounded-button bg-white hover:shadow-lg transition-all hover-scale"
+              >
+                Load More
+              </button>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+    <div id="product-detail-page" class="hidden pt-16">
+      <div class="container mx-auto px-4 py-8">
+        <nav class="flex items-center space-x-2 mb-8 text-sm">
+          <a
+            href="#"
+            class="text-gray-500 hover:text-primary"
+            onclick="showMainPage()"
+            >Home</a
+          >
+          <i class="ri-arrow-right-s-line text-gray-400"></i>
+          <a
+            href="#"
+            class="text-gray-500 hover:text-primary"
+            onclick="showElectronicsPage()"
+            >Electronics</a
+          >
+          <i class="ri-arrow-right-s-line text-gray-400"></i>
+          <span class="text-gray-900" id="product-title"></span>
+        </nav>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          <div class="space-y-6">
+            <div
+              class="aspect-w-4 aspect-h-3 rounded-lg overflow-hidden bg-gray-100"
+            >
+              <img id="product-image" class="w-full h-full object-cover" />
+            </div>
+          </div>
+          <div class="space-y-6">
+            <div>
+              <h1 class="text-3xl font-bold mb-2" id="product-title"></h1>
+              <div class="flex items-center space-x-4 text-sm text-gray-500">
+                <span id="posted-time"></span>
+                <span>•</span>
+                <span id="product-category"></span>
+              </div>
+            </div>
+            <div class="flex items-center justify-between">
+              <span
+                class="text-4xl font-bold text-primary"
+                id="product-price"
+              ></span>
+              <button class="text-gray-400 hover:text-red-500 p-2">
+                <i class="ri-heart-line ri-2x"></i>
+              </button>
+            </div>
+            <div class="space-y-4 border-t border-gray-100 pt-4">
+              <div class="flex items-center justify-between">
+                <span class="text-gray-500">Condition</span>
+                <span
+                  class="font-medium text-green-600"
+                  id="product-condition"
+                ></span>
+              </div>
+              <div class="flex items-center justify-between">
+                <span class="text-gray-500">Seller</span>
+                <div class="flex items-center space-x-2">
+                  <img
+                    src="https://public.readdy.ai/ai/img_res/63819d79bbe0eb1a83e1c3e8d104346b.jpg"
+                    class="w-8 h-8 rounded-full"
+                  />
+                  <span class="font-medium">Ms dhoni</span>
+                  <i class="ri-verified-badge-fill text-primary"></i>
+                </div>
+              </div>
+              <div class="flex items-center justify-between">
+                <span class="text-gray-500">Location</span>
+                <span>IITPATNA, BIHAR</span>
+              </div>
+            </div>
+            <div class="space-y-4 border-t border-gray-100 pt-4">
+              <h2 class="font-medium">Description</h2>
+              <p class="text-gray-600" id="product-description"></p>
+            </div>
+            <div class="space-y-4 border-t border-gray-100 pt-4">
+              <div class="grid grid-cols-2 gap-4">
+                <button
+                  class="flex items-center justify-center space-x-2 bg-gradient-to-r from-primary to-primary/80 text-white py-3 rounded-button hover:shadow-lg transition-all hover-scale"
+                >
+                  <i class="ri-message-3-line"></i>
+                  <span>Chat with Seller</span>
+                </button>
+                <button
+                  class="flex items-center justify-center space-x-2 border-2 border-primary text-primary py-3 rounded-button hover:bg-primary/5"
+                >
+                  <i class="ri-phone-line"></i>
+                  <span>View Contact</span>
+                </button>
+              </div>
+              <button
+                class="w-full flex items-center justify-center space-x-2 bg-gray-100 text-gray-600 py-3 rounded-button hover:bg-gray-200"
+              >
+                <i class="ri-flag-line"></i>
+                <span>Report Item</span>
+              </button>
+            </div>
+          </div>
+        </div>
+        <section class="mt-16">
+          <h2 class="text-2xl font-bold mb-8">Similar Items</h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <!-- Similar products will be dynamically loaded here -->
+          </div>
+        </section>
+      </div>
+    </div>
+  </body>
+</html>
