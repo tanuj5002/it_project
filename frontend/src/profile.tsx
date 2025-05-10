@@ -197,7 +197,7 @@ const App: React.FC = () => {
     {
       id: 4,
       name: "Wireless Headphones",
-      price: 120,
+      price: 1200,
       condition: "Like New",
       image:
         "https://public.readdy.ai/ai/img_res/621bbd4dba83c7ac2a647dbc49062e91.jpg",
@@ -207,7 +207,7 @@ const App: React.FC = () => {
     {
       id: 5,
       name: "Graphic Calculator",
-      price: 45,
+      price: 450,
       condition: "Good",
       image:
         "https://public.readdy.ai/ai/img_res/89ecf8475e605ce7a553f256f2c6ae20.jpg",
@@ -654,7 +654,7 @@ const App: React.FC = () => {
                                   {item.name}
                                 </h3>
                                 <span className="font-bold text-indigo-600">
-                                  ${item.price}
+                                ₹{item.price}
                                 </span>
                               </div>
                               <div className="mt-4 flex justify-between items-center">
@@ -724,7 +724,7 @@ const App: React.FC = () => {
                                   {item.name}
                                 </h3>
                                 <span className="font-bold text-green-600">
-                                  ${item.price}
+                                ₹{item.price}
                                 </span>
                               </div>
                               <div className="mt-2">
@@ -788,7 +788,7 @@ const App: React.FC = () => {
                                   {item.name}
                                 </h3>
                                 <span className="font-bold text-indigo-600">
-                                  ${item.price}
+                                ₹{item.price}
                                 </span>
                               </div>
                               <div className="mt-2">
