@@ -284,7 +284,7 @@ const App: React.FC = () => {
                 </h1>
               </div>
               <a
-                href="https://readdy.ai/home/62a88c4d-aac8-4b26-8141-65107abda862/2136e2fe-4f22-4e35-a4f5-2639d96b0a5e"
+                href="http://localhost:3000/listings"
                 data-readdy="true"
                 className="ml-4 text-gray-600 hover:text-gray-900 flex items-center cursor-pointer"
               >
@@ -293,16 +293,16 @@ const App: React.FC = () => {
               </a>
             </div>
             <div className="flex items-center space-x-4">
-              <button className="text-gray-600 hover:text-gray-900 cursor-pointer">
+              {/*<button className="text-gray-600 hover:text-gray-900 cursor-pointer">
                 <i className="fas fa-heart"></i>
                 <span className="ml-1">Saved</span>
               </button>
               <button className="text-gray-600 hover:text-gray-900 cursor-pointer">
                 <i className="fas fa-comment"></i>
                 <span className="ml-1">Messages</span>
-              </button>
+              </button>*/}
               <a
-                href="https://readdy.ai/home/62a88c4d-aac8-4b26-8141-65107abda862/40a364ad-64db-4eb4-8c8c-70457ea75d6d"
+                href="http://localhost:3000/listingform"
                 data-readdy="true"
                 className="bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-button whitespace-nowrap cursor-pointer inline-flex items-center"
               >
@@ -624,10 +624,12 @@ const App: React.FC = () => {
                       <h2 className="text-lg font-semibold text-gray-900">
                         Your Active Listings
                       </h2>
-                      <button className="text-indigo-600 hover:text-indigo-800 text-sm font-medium cursor-pointer">
-                        <i className="fas fa-plus mr-2"></i>
-                        Add New Listing
-                      </button>
+                      <a
+                      href="http://localhost:3000/listingform"
+                      className="text-indigo-600 hover:text-indigo-800 text-sm font-medium cursor-pointer"
+                      ><i className="fas fa-plus mr-2"></i>
+                      Add New Listing
+                      </a>
                     </div>
                     {activeListings.length > 0 ? (
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

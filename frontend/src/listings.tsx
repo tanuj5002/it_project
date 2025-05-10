@@ -1,4 +1,6 @@
 // The exported code uses Tailwind CSS. Install Tailwind CSS in your dev environment to ensure all styles work.
+
+
 import React, { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
 interface Seller {
@@ -299,13 +301,13 @@ onClick={() => setShowSavedOnly(!showSavedOnly)}
 <i className="fas fa-comment"></i>
 <span className="ml-1">Messages</span>
 </button>
-<button
-className="bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-button whitespace-nowrap cursor-pointer"
-onClick={handleSellItem}
+<a
+  href="http://localhost:3000/listingform"
+  className="bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-button whitespace-nowrap cursor-pointer"
 >
-<i className="fas fa-plus mr-2"></i>
-<span>Sell Item</span>
-</button>
+  <i className="fas fa-plus mr-2"></i>
+  <span>Sell Item</span>
+</a>
 <div className="relative" ref={userMenuRef}>
 <img
 src="https://public.readdy.ai/ai/img_res/7285b982f41641a86940239c7459881a.jpg"
@@ -316,8 +318,8 @@ onClick={() => setIsUserMenuOpen(!isUserMenuOpen)}
 {isUserMenuOpen && (
 <div className="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-10">
 <a href="http://localhost:3000/profile" data-readdy="true" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Your Profile</a>
-<a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Settings</a>
-<a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Sign out</a>
+{/* <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Settings</a>
+<a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Sign out</a>*/}
 </div>
 )}
 </div>
