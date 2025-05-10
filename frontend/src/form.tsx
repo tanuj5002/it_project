@@ -272,7 +272,7 @@ if (Ifiles[0]) {
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center">
               <a 
-                href="https://readdy.ai/home/62a88c4d-aac8-4b26-8141-65107abda862/cb5d451d-23fc-473e-9eae-029acf2141ed" 
+                href="http://localhost:3000/profile" 
                 data-readdy="true"
                 className="flex items-center text-gray-600 hover:text-gray-900 cursor-pointer"
               >
@@ -280,18 +280,19 @@ if (Ifiles[0]) {
                 <span>Back to Profile</span>
               </a>
               <div className="ml-6 flex-shrink-0">
-                <h1 className="text-2xl font-bold text-indigo-600">CampusMarket</h1>
+                <h1 className="text-2xl font-bold text-indigo-600">KampusKart</h1>
               </div>
             </div>
             <div className="flex items-center space-x-4">
-              <button className="text-gray-600 hover:text-gray-900 cursor-pointer">
+              {/*<button className="text-gray-600 hover:text-gray-900 cursor-pointer">
                 <i className="fas fa-heart"></i>
                 <span className="ml-1">Saved</span>
               </button>
               <button className="text-gray-600 hover:text-gray-900 cursor-pointer">
                 <i className="fas fa-comment"></i>
                 <span className="ml-1">Messages</span>
-              </button>
+              </button> */}
+            
               <button className="bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-button whitespace-nowrap cursor-pointer">
                 <i className="fas fa-plus mr-2"></i>
                 <span>Sell Item</span>
@@ -797,14 +798,6 @@ if (Ifiles[0]) {
         {/* Action Buttons */}
         <div className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 p-4 z-10">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
-            <button
-              type="button"
-              onClick={() => handleSubmit(true)}
-              className="px-6 py-3 border border-gray-300 shadow-sm text-base font-medium rounded-button text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 whitespace-nowrap cursor-pointer"
-            >
-              <i className="fas fa-save mr-2"></i>
-              Save as Draft
-            </button>
             <button
               type="button"
               onClick={() => {

@@ -293,14 +293,14 @@ const App: React.FC = () => {
               </a>
             </div>
             <div className="flex items-center space-x-4">
-              <button className="text-gray-600 hover:text-gray-900 cursor-pointer">
+              {/*<button className="text-gray-600 hover:text-gray-900 cursor-pointer">
                 <i className="fas fa-heart"></i>
                 <span className="ml-1">Saved</span>
               </button>
               <button className="text-gray-600 hover:text-gray-900 cursor-pointer">
                 <i className="fas fa-comment"></i>
                 <span className="ml-1">Messages</span>
-              </button>
+              </button>*/}
               <a
                 href="http://localhost:3000/listingform"
                 data-readdy="true"
@@ -624,10 +624,12 @@ const App: React.FC = () => {
                       <h2 className="text-lg font-semibold text-gray-900">
                         Your Active Listings
                       </h2>
-                      <button className="text-indigo-600 hover:text-indigo-800 text-sm font-medium cursor-pointer">
-                        <i className="fas fa-plus mr-2"></i>
-                        Add New Listing
-                      </button>
+                      <a
+                      href="http://localhost:3000/listingform"
+                      className="text-indigo-600 hover:text-indigo-800 text-sm font-medium cursor-pointer"
+                      ><i className="fas fa-plus mr-2"></i>
+                      Add New Listing
+                      </a>
                     </div>
                     {activeListings.length > 0 ? (
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
