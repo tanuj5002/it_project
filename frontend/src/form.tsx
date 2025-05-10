@@ -280,7 +280,7 @@ if (Ifiles[0]) {
                 <span>Back to Profile</span>
               </a>
               <div className="ml-6 flex-shrink-0">
-                <h1 className="text-2xl font-bold text-indigo-600">CampusMarket</h1>
+                <h1 className="text-2xl font-bold text-indigo-600">KampusKart</h1>
               </div>
             </div>
             <div className="flex items-center space-x-4">
@@ -399,7 +399,7 @@ if (Ifiles[0]) {
                   </label>
                   <div className="relative">
                     <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                      <span className="text-gray-500 sm:text-sm">$</span>
+                      <span className="text-gray-500 sm:text-sm">₹</span>
                     </div>
                     <input
                       type="text"
@@ -718,7 +718,7 @@ if (Ifiles[0]) {
                     </h3>
                     <div className="flex justify-between items-center mb-3">
                       <span className="font-bold text-lg text-indigo-600">
-                        {formData.price ? `$${formData.price}` : "$0.00"}
+                        {formData.price ? `₹${formData.price}` : "₹0.00"}
                       </span>
                       <span className="text-xs px-2 py-1 bg-gray-100 rounded-full text-gray-600">
                         {formData.condition || "Condition"}

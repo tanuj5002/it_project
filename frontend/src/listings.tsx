@@ -420,7 +420,7 @@ onClick={() => openProductDetail(product)}
 >
 {product.name}
 </h3>
-<span className="font-bold text-lg text-indigo-600">${product.price}</span>
+<span className="font-bold text-lg text-indigo-600">₹{product.price}</span>
 </div>
 <p className="text-sm text-gray-500 mb-3">{product.description.substring(0, 80)}...</p>
 <div className="flex items-center justify-between">
