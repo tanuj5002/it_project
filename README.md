@@ -47,6 +47,7 @@ It simplifies buying and selling within the campus community, ensuring affordabi
 
 ## 📂 Folder Structure  
 
+```bash
 it_project/
 ├── client/                     # React frontend
 │   ├── public/                 # Static files (favicon, index.html, logos)
@@ -106,3 +107,4 @@ it_project/
 ├── .gitignore                  # Ignore node_modules, env, logs, etc.
 ├── README.md                   # Project documentation
 └── LICENSE                     # License file
+
