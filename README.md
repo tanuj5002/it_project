@@ -46,65 +46,63 @@ It simplifies buying and selling within the campus community, ensuring affordabi
 ---
 
 ## 📂 Folder Structure  
+
 it_project/
-├── client/                         # React frontend (Tailwind + Context/Redux if needed)
-│   ├── public/                     # Static files (favicon, index.html, logos)
+├── client/                     # React frontend
+│   ├── public/                 # Static files (favicon, index.html, logos)
 │   ├── src/
-│   │   ├── assets/                 # Images, icons, fonts, and static resources
-│   │   ├── components/             # Reusable UI components
-│   │   │   ├── common/             # Buttons, modals, loaders, etc.
-│   │   │   ├── layout/             # Navbar, Sidebar, Footer
-│   │   │   └── forms/              # Login, Signup, Product forms
-│   │   ├── pages/                  # Page components (Home, Dashboard, Product, Profile)
-│   │   ├── context/                # Context API (if using React Context for state)
-│   │   ├── hooks/                  # Custom React hooks
-│   │   ├── services/               # API calls using Axios/Fetch
-│   │   │   ├── authAPI.js          # Auth-related API requests
-│   │   │   ├── productAPI.js       # Product-related API requests
-│   │   │   └── userAPI.js          # User-related API requests
-│   │   ├── utils/                  # Utility functions (formatters, validators)
-│   │   ├── styles/                 # Tailwind config, global styles, custom CSS
-│   │   ├── App.js                  # Root React component
-│   │   ├── index.js                # React entry point
-│   │   ├── routes.js               # React Router routes config
-│   │   └── setupTests.js           # Unit testing setup (optional)
-│   ├── .env                        # Frontend environment variables (API URLs)
-│   └── package.json               # Frontend dependencies
+│   │   ├── assets/             # Images, icons, fonts, etc.
+│   │   ├── components/         # Reusable UI components
+│   │   │   ├── common/         # Buttons, modals, loaders, etc.
+│   │   │   ├── layout/         # Navbar, Sidebar, Footer
+│   │   │   └── forms/          # Login, Signup, Product forms
+│   │   ├── pages/              # All main pages (Home, Dashboard, Profile)
+│   │   ├── context/            # React Context API (state management)
+│   │   ├── services/           # API calls using Axios/Fetch
+│   │   │   ├── authAPI.js      # Auth-related API requests
+│   │   │   ├── productAPI.js   # Product-related API requests
+│   │   │   └── userAPI.js      # User-related API requests
+│   │   ├── hooks/              # Custom React hooks
+│   │   ├── utils/              # Utility functions (validators, formatters)
+│   │   ├── styles/             # Tailwind customization & global CSS
+│   │   ├── App.js              # Main React component
+│   │   ├── index.js            # React entry point
+│   │   └── routes.js           # React Router configuration
+│   ├── .env                    # Frontend environment variables
+│   └── package.json            # Frontend dependencies
 │
-├── server/                         # Backend (Node + Express + MongoDB)
-│   ├── config/                     # Configuration files
-│   │   ├── db.js                   # MongoDB connection
-│   │   └── cloudinary.js           # Image upload config (optional)
-│   ├── controllers/                # Route logic (business layer)
-│   │   ├── authController.js       # User authentication
-│   │   ├── productController.js    # Product operations (CRUD)
-│   │   ├── userController.js       # User profile, settings
-│   │   └── orderController.js      # Orders (if implemented)
-│   ├── middleware/                 # Middleware
-│   │   ├── authMiddleware.js       # JWT auth protection
-│   │   ├── errorHandler.js         # Centralized error handling
-│   │   └── uploadMiddleware.js     # Image/file uploads
-│   ├── models/                     # Mongoose models
-│   │   ├── userModel.js            # User schema
-│   │   ├── productModel.js         # Product schema
-│   │   ├── orderModel.js           # Order schema (if implemented)
-│   │   └── reviewModel.js          # Product reviews (optional)
-│   ├── routes/                     # API routes
-│   │   ├── authRoutes.js           # Login, signup, JWT handling
-│   │   ├── productRoutes.js        # Product CRUD routes
-│   │   ├── userRoutes.js           # User profile routes
-│   │   └── orderRoutes.js          # Orders (if implemented)
-│   ├── utils/                      # Helper functions
-│   │   ├── generateToken.js        # JWT token generation
-│   │   ├── sendEmail.js            # Email service (optional)
-│   │   └── logger.js               # Custom logger (optional)
-│   ├── tests/                      # Backend testing (Jest, Mocha, etc.)
-│   ├── server.js                   # Main server file (entry point)
-│   ├── .env                        # Backend environment variables
-│   ├── package.json               # Backend dependencies
-│   └── README.md
+├── server/                     # Backend (Node.js + Express + MongoDB)
+│   ├── config/                 # Configurations
+│   │   ├── db.js               # MongoDB connection
+│   │   └── cloudinary.js       # Image upload config (optional)
+│   ├── controllers/            # Route logic (business layer)
+│   │   ├── authController.js   # Auth functions
+│   │   ├── productController.js# Product CRUD
+│   │   ├── userController.js   # User profiles
+│   │   └── orderController.js  # Orders (if implemented)
+│   ├── middleware/             # Middleware
+│   │   ├── authMiddleware.js   # JWT protection
+│   │   ├── errorHandler.js     # Centralized error handling
+│   │   └── uploadMiddleware.js # Image/file uploads
+│   ├── models/                 # Mongoose models
+│   │   ├── userModel.js        # User schema
+│   │   ├── productModel.js     # Product schema
+│   │   ├── orderModel.js       # Order schema
+│   │   └── reviewModel.js      # Reviews (optional)
+│   ├── routes/                 # API routes
+│   │   ├── authRoutes.js       # Login, signup, JWT handling
+│   │   ├── productRoutes.js    # Product APIs
+│   │   ├── userRoutes.js       # User APIs
+│   │   └── orderRoutes.js      # Orders APIs
+│   ├── utils/                  # Helper functions
+│   │   ├── generateToken.js    # JWT generation
+│   │   ├── sendEmail.js        # Email service (optional)
+│   │   └── logger.js           # Logging (optional)
+│   ├── tests/                  # Unit & integration tests
+│   ├── server.js               # Entry point
+│   ├── .env                    # Backend environment variables
+│   └── package.json            # Backend dependencies
 │
-├── .gitignore                      # Ignore node_modules, .env, logs, etc.
-├── README.md                       # Project documentation
-├── package.json                    # Root package file (if monorepo)
-└── LICENSE                         # Project license (MIT, etc.)
+├── .gitignore                  # Ignore node_modules, env, logs, etc.
+├── README.md                   # Project documentation
+└── LICENSE                     # License file
