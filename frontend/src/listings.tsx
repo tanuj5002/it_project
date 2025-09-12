@@ -7,6 +7,7 @@ interface Seller {
 name: string;
 rating: number;
 avatar: string;
+phone: string;
 }
 interface Product {
 id: string;
@@ -20,7 +21,9 @@ image: string;
 timestamp: string;
 saved: boolean;
 }
+
 const App: React.FC = () => {
+const [sellerPhone, setSellerPhone] = useState<string | null>(null);
 const [listings, setListings] = useState([
     {
         image: {
@@ -35,7 +38,7 @@ const [listings, setListings] = useState([
           id:"",
           fullName:"",
           email:"",
-          phone:"",
+          phone:"6304898380",
         },
         title: "",
         description: "",
@@ -48,102 +51,108 @@ const [listings, setListings] = useState([
     },
 ])
 const [products, setProducts] = useState<Product[]>([
-{
-id: "1",
-name: "MacBook Pro 2023",
-price: 1299,
-description: "Barely used MacBook Pro with M2 chip, 16GB RAM, 512GB SSD",
-condition: "Like New",
-category: "Electronics",
-seller: {
-name: "Alex Johnson",
-rating: 4.8,
-avatar: "https://public.readdy.ai/ai/img_res/56a6446dc4771b3a06879c284713259d.jpg"
-},
-image: "https://public.readdy.ai/ai/img_res/d4c3de1aadad10654846d1514344ca84.jpg",
-timestamp: "2 days ago",
-saved: false
-},
-{
-id: "2",
-name: "Calculus Textbook 5th Edition",
-price: 45,
-description: "Calculus: Early Transcendentals, James Stewart, perfect condition with no highlights",
-condition: "Good",
-category: "Books",
-seller: {
-name: "Emma Wilson",
-rating: 4.6,
-avatar: "https://public.readdy.ai/ai/img_res/c00aceccd61d9c48db4578bf2dbdcd09.jpg"
-},
-image: "https://public.readdy.ai/ai/img_res/73c123769a3f0352157b8451ecbf7840.jpg",
-timestamp: "5 days ago",
-saved: true
-},
-{
-id: "3",
-name: "Dorm Room Mini Fridge",
-price: 75,
-description: "Compact 3.2 cu ft refrigerator, perfect for dorm rooms, includes freezer compartment",
-condition: "Good",
-category: "Appliances",
-seller: {
-name: "Marcus Chen",
-rating: 4.9,
-avatar: "https://public.readdy.ai/ai/img_res/1eef5868f90b493f68d61a9ad74b8807.jpg"
-},
-image: "https://public.readdy.ai/ai/img_res/260ad05442fc26e4a1ebd7b4da785c59.jpg",
-timestamp: "1 week ago",
-saved: false
-},
-{
-id: "4",
-name: "Acoustic Guitar",
-price: 150,
-description: "Yamaha FG800 acoustic guitar with case, great condition, perfect for beginners",
-condition: "Very Good",
-category: "Musical Instruments",
-seller: {
-name: "Sophia Rodriguez",
-rating: 4.7,
-avatar: "https://public.readdy.ai/ai/img_res/2c509a3cf39c9ccb273ea0f20f3339c5.jpg"
-},
-image: "https://public.readdy.ai/ai/img_res/dfb6c78be16bfc2aff53f532c5438b0d.jpg",
-timestamp: "3 days ago",
-saved: false
-},
-{
-id: "5",
-name: "Mountain Bike",
-price: 220,
-description: "Trek 3500 mountain bike, 21-speed, recently tuned up and ready to ride",
-condition: "Good",
-category: "Sports & Outdoors",
-seller: {
-name: "Jake Williams",
-rating: 4.5,
-avatar: "https://public.readdy.ai/ai/img_res/591a63981cad1e82799f92623428cc07.jpg"
-},
-image: "https://public.readdy.ai/ai/img_res/902cbcac0e7a98e183b6bcf5dd8781d9.jpg",
-timestamp: "6 days ago",
-saved: true
-},
-{
-id: "6",
-name: "Desk Lamp with USB Port",
-price: 25,
-description: "LED desk lamp with adjustable brightness, USB charging port, perfect for studying",
-condition: "Like New",
-category: "Home & Furniture",
-seller: {
-name: "Olivia Parker",
-rating: 4.8,
-avatar: "https://public.readdy.ai/ai/img_res/fee2d4bc8f340612eec89b290792d03e.jpg"
-},
-image: "https://public.readdy.ai/ai/img_res/c2a4c1b51061c302d12761c2cd8587ca.jpg",
-timestamp: "4 days ago",
-saved: false
-}
+  {
+    id: "1",
+    name: "MacBook Pro 2023",
+    price: 1299,
+    description: "Barely used MacBook Pro with M2 chip, 16GB RAM, 512GB SSD",
+    condition: "Like New",
+    category: "Electronics",
+    seller: {
+      name: "Alex Johnson",
+      rating: 4.8,
+      avatar: "https://public.readdy.ai/ai/img_res/56a6446dc4771b3a06879c284713259d.jpg",
+      phone: "123-456-7890", // Add phone
+    },
+    image: "https://public.readdy.ai/ai/img_res/d4c3de1aadad10654846d1514344ca84.jpg",
+    timestamp: "2 days ago",
+    saved: false,
+  },
+  {
+    id: "2",
+    name: "Calculus Textbook 5th Edition",
+    price: 45,
+    description: "Calculus: Early Transcendentals, James Stewart, perfect condition with no highlights",
+    condition: "Good",
+    category: "Books",
+    seller: {
+      name: "Emma Wilson",
+      rating: 4.6,
+      avatar: "https://public.readdy.ai/ai/img_res/c00aceccd61d9c48db4578bf2dbdcd09.jpg",
+      phone: "987-654-3210", // Add phone
+    },
+    image: "https://public.readdy.ai/ai/img_res/73c123769a3f0352157b8451ecbf7840.jpg",
+    timestamp: "5 days ago",
+    saved: true,
+  },
+  {
+    id: "3",
+    name: "Dorm Room Mini Fridge",
+    price: 75,
+    description: "Compact 3.2 cu ft refrigerator, perfect for dorm rooms, includes freezer compartment",
+    condition: "Good",
+    category: "Appliances",
+    seller: {
+      name: "Marcus Chen",
+      rating: 4.9,
+      avatar: "https://public.readdy.ai/ai/img_res/1eef5868f90b493f68d61a9ad74b8807.jpg",
+      phone: "555-123-4567", // Add phone
+    },
+    image: "https://public.readdy.ai/ai/img_res/260ad05442fc26e4a1ebd7b4da785c59.jpg",
+    timestamp: "1 week ago",
+    saved: false,
+  },
+  {
+    id: "4",
+    name: "Acoustic Guitar",
+    price: 150,
+    description: "Yamaha FG800 acoustic guitar with case, great condition, perfect for beginners",
+    condition: "Very Good",
+    category: "Musical Instruments",
+    seller: {
+      name: "Sophia Rodriguez",
+      rating: 4.7,
+      avatar: "https://public.readdy.ai/ai/img_res/2c509a3cf39c9ccb273ea0f20f3339c5.jpg",
+      phone: "444-555-6666", // Add phone
+    },
+    image: "https://public.readdy.ai/ai/img_res/dfb6c78be16bfc2aff53f532c5438b0d.jpg",
+    timestamp: "3 days ago",
+    saved: false,
+  },
+  {
+    id: "5",
+    name: "Mountain Bike",
+    price: 220,
+    description: "Trek 3500 mountain bike, 21-speed, recently tuned up and ready to ride",
+    condition: "Good",
+    category: "Sports & Outdoors",
+    seller: {
+      name: "Jake Williams",
+      rating: 4.5,
+      avatar: "https://public.readdy.ai/ai/img_res/591a63981cad1e82799f92623428cc07.jpg",
+      phone: "777-888-9999", // Add phone
+    },
+    image: "https://public.readdy.ai/ai/img_res/902cbcac0e7a98e183b6bcf5dd8781d9.jpg",
+    timestamp: "6 days ago",
+    saved: true,
+  },
+  {
+    id: "6",
+    name: "Desk Lamp with USB Port",
+    price: 25,
+    description: "LED desk lamp with adjustable brightness, USB charging port, perfect for studying",
+    condition: "Like New",
+    category: "Home & Furniture",
+    seller: {
+      name: "Olivia Parker",
+      rating: 4.8,
+      avatar: "https://public.readdy.ai/ai/img_res/fee2d4bc8f340612eec89b290792d03e.jpg",
+      phone: "222-333-4444", // Add phone
+    },
+    image: "https://public.readdy.ai/ai/img_res/c2a4c1b51061c302d12761c2cd8587ca.jpg",
+    timestamp: "4 days ago",
+    saved: false,
+  },
 ]);
 
 
@@ -168,15 +177,16 @@ saved: false
         seller: {
         name: item.seller.fullName,
         rating: 4.8,
-        avatar: "https://public.readdy.ai/ai/img_res/fee2d4bc8f340612eec89b290792d03e.jpg"
+        avatar: "https://public.readdy.ai/ai/img_res/fee2d4bc8f340612eec89b290792d03e.jpg",
+        phone: item.seller.phone,
         },
         image: `http://localhost:5001/uploads/${item.image.data}`,
         timestamp: item.createdAt,
         saved: true,
       }
-    ))
-    setProducts(activeListings)
-}, [listings])
+    ));
+    setProducts(activeListings);
+}, [listings]);
 const categories = [
 "All Categories",
 "Electronics",
@@ -422,7 +432,7 @@ onClick={() => openProductDetail(product)}
 >
 {product.name}
 </h3>
-<span className="font-bold text-lg text-indigo-600">${product.price}</span>
+<span className="font-bold text-lg text-indigo-600">₹{product.price}</span>
 </div>
 <p className="text-sm text-gray-500 mb-3">{product.description.substring(0, 80)}...</p>
 <div className="flex items-center justify-between">
@@ -567,16 +577,22 @@ onClick={() => toggleSaved(selectedProduct.id)}
 </div>
 <div className="space-y-4">
 <button
-className="w-full bg-indigo-600 hover:bg-indigo-700 text-white py-3 rounded-button whitespace-nowrap"
-onClick={() => {
-setShowModal(false);
-addNotification(`You've made an offer for ${selectedProduct.name}`, 'success');
-}}
+  className="w-full bg-indigo-600 hover:bg-indigo-700 text-white py-3 rounded-button whitespace-nowrap"
+  onClick={() => {
+    setShowModal(false);
+    if (selectedProduct) {
+      setSellerPhone(selectedProduct.seller.phone); // Set the seller's phone number
+      addNotification(
+        `You've made an offer for ${selectedProduct.name}. Seller's phone: ${selectedProduct.seller.phone}`,
+        'success'
+      );
+    }
+  }}
 >
-<i className="fas fa-tag mr-2"></i>
-Make an Offer
+  <i className="fas fa-tag mr-2"></i>
+  Make an Offer
 </button>
-<button
+{/*<button
 className="w-full bg-white border border-indigo-600 text-indigo-600 hover:bg-indigo-50 py-3 rounded-button whitespace-nowrap"
 onClick={() => {
 setShowModal(false);
@@ -585,7 +601,7 @@ addNotification(`${selectedProduct.name} has been reported`, 'info');
 >
 <i className="fas fa-flag mr-2"></i>
 Report Item
-</button>
+</button>*/}
 </div>
 </div>
 </div>
